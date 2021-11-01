@@ -1,0 +1,102 @@
+﻿<Page
+    x:Class="wakeupapp.Views.WeatherPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:wakeupapp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="270"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="weather_search_input_tb" Grid.Row="0" HorizontalAlignment="Left" Margin="758,26,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Location" Grid.Column="1"/>
+        <Button x:Name="weather_button" Grid.Row="0" Content="Search" Margin="764,63,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button x:Name="current_location" Content="Get weather for current location" Grid.Column="1" Margin="472,0,0,0"/>
+
+        <Image x:Name="Weather_img" Grid.Row="1" HorizontalAlignment="Left" Height="150" Margin="455,120,0,0" VerticalAlignment="Top" Width="150" Grid.Column="1"/>
+        <TextBlock x:Name="weather" Grid.Row="1" Grid.Column="1" FontSize="30" HorizontalAlignment="Left" Margin="10,103,0,0" Text="Current weather:" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"/>
+        <TextBlock x:Name="weather_textblock_name" FontWeight="Bold" Grid.Row="1" Grid.ColumnSpan="2" FontSize="50" HorizontalAlignment="Center" Margin="0,30,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"/>
+        <TextBlock x:Name="weather_textblock_temp" Grid.Row="1" FontSize="40" HorizontalAlignment="Left" Margin="171,168,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Grid.Column="1"/>
+        <TextBlock x:Name="weather_textblock_image" Grid.Row="1" FontSize="15" HorizontalAlignment="Left" Margin="480,0,0,14" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" TextAlignment="Center" Grid.Column="1"/>
+        <TextBlock x:Name="weather_textblock" Grid.Row="1" Grid.ColumnSpan="2" FontSize="20" HorizontalAlignment="Center" Margin="700,0,0,20" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" TextAlignment="Left"/>
+
+        <TextBlock x:Name="forecast" Grid.Row="2" Grid.Column="1" FontSize="30" HorizontalAlignment="Left" Margin="10,10,0,0" Text="24h weather forecast:" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"/>
+        <Grid Grid.Column="1" Margin="0,0,10,10" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="forecast_textblock_time0" Grid.Row="1" Grid.Column="0" FontSize="20" HorizontalAlignment="Center" Margin="0,11,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+            <Image x:Name="forecast_image0" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Height="46" VerticalAlignment="Top" Width="58" Margin="0,65,0,0"/>
+            <TextBlock x:Name="forecast_textblock_temp0" Grid.Row="1" FontSize="20" HorizontalAlignment="Center" Margin="0,113,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+
+            <TextBlock x:Name="forecast_textblock_time1" Grid.Row="1" Grid.Column="1" FontSize="20" HorizontalAlignment="Center" Margin="0,11,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+            <Image x:Name="forecast_image1" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Height="46" VerticalAlignment="Top" Width="58" Margin="0,65,0,0"/>
+            <TextBlock x:Name="forecast_textblock_temp1" Grid.Row="1" Grid.Column="1" FontSize="20" HorizontalAlignment="Center" Margin="0,113,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+
+            <TextBlock x:Name="forecast_textblock_time2" Grid.Row="1" Grid.Column="2" FontSize="20" HorizontalAlignment="Center" Margin="0,11,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+            <Image x:Name="forecast_image2" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Height="46" VerticalAlignment="Top" Width="58" Margin="0,65,0,0"/>
+            <TextBlock x:Name="forecast_textblock_temp2" Grid.Row="1" Grid.Column="2" FontSize="20" HorizontalAlignment="Center" Margin="0,113,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+
+            <TextBlock x:Name="forecast_textblock_time3" Grid.Row="1" Grid.Column="3" FontSize="20" HorizontalAlignment="Center" Margin="0,11,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+            <Image x:Name="forecast_image3" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" Height="46" VerticalAlignment="Top" Width="58" Margin="0,65,0,0"/>
+            <TextBlock x:Name="forecast_textblock_temp3" Grid.Row="1" Grid.Column="3" FontSize="20" HorizontalAlignment="Center" Margin="0,113,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+
+            <TextBlock x:Name="forecast_textblock_time4" Grid.Row="1" Grid.Column="4" FontSize="20" HorizontalAlignment="Center" Margin="0,11,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+            <Image x:Name="forecast_image4" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" Height="46" VerticalAlignment="Top" Width="58" Margin="0,65,0,0"/>
+            <TextBlock x:Name="forecast_textblock_temp4" Grid.Row="1" Grid.Column="4" FontSize="20" HorizontalAlignment="Center" Margin="0,113,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+
+            <TextBlock x:Name="forecast_textblock_time5" Grid.Row="1" Grid.Column="5" FontSize="20" HorizontalAlignment="Center" Margin="0,11,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+            <Image x:Name="forecast_image5" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Center" Height="46" VerticalAlignment="Top" Width="58" Margin="0,65,0,0"/>
+            <TextBlock x:Name="forecast_textblock_temp5" Grid.Row="1" Grid.Column="5" FontSize="20" HorizontalAlignment="Center" Margin="0,113,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+
+            <TextBlock x:Name="forecast_textblock_time6" Grid.Row="2" Grid.Column="0" FontSize="20" HorizontalAlignment="Center" Margin="0,11,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+            <Image x:Name="forecast_image6" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Height="46" VerticalAlignment="Top" Width="58" Margin="0,65,0,0"/>
+            <TextBlock x:Name="forecast_textblock_temp6" Grid.Row="2" Grid.Column="0" FontSize="20" HorizontalAlignment="Center" Margin="0,113,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+
+            <TextBlock x:Name="forecast_textblock_time7" Grid.Row="2" Grid.Column="1" FontSize="20" HorizontalAlignment="Center" Margin="0,11,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+            <Image x:Name="forecast_image7" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Height="46" VerticalAlignment="Top" Width="58" Margin="0,65,0,0"/>
+            <TextBlock x:Name="forecast_textblock_temp7" Grid.Row="2" Grid.Column="1" FontSize="20" HorizontalAlignment="Center" Margin="0,113,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+
+            <TextBlock x:Name="forecast_textblock_time8" Grid.Row="2" Grid.Column="2" FontSize="20" HorizontalAlignment="Center" Margin="0,11,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+            <Image x:Name="forecast_image8" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Height="46" VerticalAlignment="Top" Width="58" Margin="0,65,0,0"/>
+            <TextBlock x:Name="forecast_textblock_temp8" Grid.Row="2" Grid.Column="2" FontSize="20" HorizontalAlignment="Center" Margin="0,113,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+
+            <TextBlock x:Name="forecast_textblock_time9" Grid.Row="2" Grid.Column="3" FontSize="20" HorizontalAlignment="Center" Margin="0,11,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+            <Image x:Name="forecast_image9" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" Height="46" VerticalAlignment="Top" Width="58" Margin="0,65,0,0"/>
+            <TextBlock x:Name="forecast_textblock_temp9" Grid.Row="2" Grid.Column="3" FontSize="20" HorizontalAlignment="Center" Margin="0,113,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+
+            <TextBlock x:Name="forecast_textblock_time10" Grid.Row="2" Grid.Column="4" FontSize="20" HorizontalAlignment="Center" Margin="0,11,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+            <Image x:Name="forecast_image10" Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center" Height="46" VerticalAlignment="Top" Width="58" Margin="0,65,0,0"/>
+            <TextBlock x:Name="forecast_textblock_temp10" Grid.Row="2" Grid.Column="4" FontSize="20" HorizontalAlignment="Center" Margin="0,113,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+
+            <TextBlock x:Name="forecast_textblock_time11" Grid.Row="2" Grid.Column="5" FontSize="20" HorizontalAlignment="Center" Margin="0,11,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+            <Image x:Name="forecast_image11" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Center" Height="46" VerticalAlignment="Top" Width="58" Margin="0,65,0,0"/>
+            <TextBlock x:Name="forecast_textblock_temp11" Grid.Row="2" Grid.Column="5" FontSize="20" HorizontalAlignment="Center" Margin="0,113,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="120"/>
+        </Grid>
+
+
+    </Grid>
+</Page>

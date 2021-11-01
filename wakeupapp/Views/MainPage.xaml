@@ -8,7 +8,53 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid x:Name="main" Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="66" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
+        <Frame x:Name="frame" Margin="120,66,0,0" Background="Transparent" Grid.RowSpan="2"/>
+
+
+        <!-- Menu -->
+        <RelativePanel Grid.RowSpan="2">
+            <Button Name="testButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" Background="DarkGray" FontSize="50" Click="testButton_Click" Height="66" Width="120" />
+        </RelativePanel>
+        <SplitView Name="MySplitView"
+                    DisplayMode="CompactOverlay"
+                   OpenPaneLength="200" 
+                   CompactPaneLength="0" 
+                   HorizontalAlignment="Left" Margin="0,0,0,0" Grid.RowSpan="2" Grid.Row="1" Background="LightGray">
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single"
+                     Name="IconsListBox" 
+                     SelectionChanged="IconsListBox_SelectionChanged" Background="LightGray">
+                    <ListBoxItem Name="WeatherListBoxItem" Background="DarkGray">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Weather" FontWeight="SemiBold" FontSize="30" Margin="40,20,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="NewsListBoxItem" Background="DarkGray">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="News" FontWeight="SemiBold" FontSize="30" Margin="40,20,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="MapListBoxItem" Background="DarkGray">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Map" FontWeight="SemiBold" FontSize="30" Margin="40,20,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="CalendarListBoxItem" Background="DarkGray">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Calendar" FontWeight="SemiBold" FontSize="30" Margin="40,20,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <TextBlock Name="ResultTextBlock" />
+            </SplitView.Content>
+        </SplitView>
     </Grid>
 </Page>
