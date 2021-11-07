@@ -19,9 +19,9 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox x:Name="weather_search_input_tb" Grid.Row="0" HorizontalAlignment="Left" Margin="758,26,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Location" Grid.Column="1"/>
-        <Button x:Name="weather_button" Grid.Row="0" Content="Search" Margin="764,63,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Button x:Name="current_location" Content="Get weather for current location" Grid.Column="1" Margin="472,0,0,0"/>
+        <TextBox x:Name="weather_search_input_tb" Grid.Row="0" HorizontalAlignment="Left" Margin="758,26,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Location" Grid.Column="1" TextChanged="weather_search_input_tb_TextChanged"/>
+        <Button x:Name="weather_button" Grid.Row="0" Content="Search" Margin="764,63,0,0" VerticalAlignment="Top" Grid.Column="1" Click="search_button_Click"/>
+        <Button x:Name="current_location" Content="Get weather for current location" Grid.Column="1" Margin="472,0,0,0" Click="current_location_search_clicked"/>
 
         <Image x:Name="Weather_img" Grid.Row="1" HorizontalAlignment="Left" Height="150" Margin="455,120,0,0" VerticalAlignment="Top" Width="150" Grid.Column="1"/>
         <TextBlock x:Name="weather" Grid.Row="1" Grid.Column="1" FontSize="30" HorizontalAlignment="Left" Margin="10,103,0,0" Text="Current weather:" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"/>

@@ -53,11 +53,10 @@ namespace wakeupapp
             var data = JsonConvert.DeserializeObject<Root>(result);
 
             weather_reports = (Root)serializer.ReadObject(ms);
-            return true; //Todo: hibavizsgálat visszatérésnél, nem csak simán true-t visszaadni
+            return true;
         }
     }
 
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
     [DataContract]
     public class Coord
     {

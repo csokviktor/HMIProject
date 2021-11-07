@@ -1,0 +1,16 @@
+{
+    "calendaritems": [
+        {
+            "dateFrom": "2021.11.07 14:00",
+            "dateTo": "2021.11.07 15:00",
+            "title": "Test title",
+            "location": "Budapest, Corvin koz 4"
+        },
+        {
+            "dateFrom": "2021.12.02 11:00",
+            "dateTo": "2021.12.02 12:00",
+            "title": "Test title",
+            "location": "Budapest, Corvin koz 4"
+        }
+    ]
+}

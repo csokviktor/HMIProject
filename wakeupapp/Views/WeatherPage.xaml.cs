@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using wakeupapp.Classes;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Media.Animation;
+using Windows.Devices.Geolocation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,11 +30,12 @@ namespace wakeupapp.Views
         {
             this.InitializeComponent();
 
-            weather_button_Click(this, new RoutedEventArgs());
+            search_button_Click(this, new RoutedEventArgs());
         }
 
-        private async void weather_button_Click(object sender, RoutedEventArgs e)
+        private async void search_button_Click(object sender, RoutedEventArgs e)
         {
+            ActualWeather.search_by = weather_search_input_tb.Text;
             var flag = await ActualWeather.GetWeatherInformationsByName();
             var flag3 = await Weather_forecast.ConvertCityToCoordinates(weather_search_input_tb.Text);
             Weather_forecast.lat = Weather_forecast.citys.lat;
@@ -44,6 +46,31 @@ namespace wakeupapp.Views
                 string weather_icon = String.Format("http://openweathermap.org/img/wn/{0}@2x.png", ActualWeather.weather_reports.weather[0].icon);
                 Weather_img.Source = new BitmapImage(new Uri(weather_icon, UriKind.Absolute));
                 ///forecast_slider.Value = 1;
+                fill_weather_textblock();
+                fill_forecast_textblock();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private async void current_location_search_clicked(object sender, RoutedEventArgs e)
+        {
+            Geolocator geolocator = new Geolocator { DesiredAccuracyInMeters = 0 };
+            Geoposition pos = await geolocator.GetGeopositionAsync();
+            Weather_forecast.lat = pos.Coordinate.Latitude;
+            Weather_forecast.lon = pos.Coordinate.Longitude;
+
+            ActualWeather.latitude = pos.Coordinate.Latitude;
+            ActualWeather.longitude = pos.Coordinate.Longitude;
+            ActualWeather.search_by = "";
+            var flag = await ActualWeather.GetWeatherInformationsByCoord();
+            var flag2 = await Weather_forecast.GetWeatherForecastInformations();
+            try
+            {
+                string weather_icon = String.Format("http://openweathermap.org/img/wn/{0}@2x.png", ActualWeather.weather_reports.weather[0].icon);
+                Weather_img.Source = new BitmapImage(new Uri(weather_icon, UriKind.Absolute));
                 fill_weather_textblock();
                 fill_forecast_textblock();
             }
