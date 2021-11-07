@@ -25,8 +25,8 @@ namespace wakeupapp.Classes
                 var data = JsonConvert.DeserializeObject<Root>(json);
 
                 items = (Items)serializer.ReadObject(ms);
+                items.calendaritems.Sort((x, y) => DateTime.Parse(x.dateFrom).CompareTo(DateTime.Parse(y.dateFrom)));
             }
-            Debug.WriteLine(items.calendaritems[0].dateFrom);
         }
     }
 

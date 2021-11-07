@@ -26,11 +26,11 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Title}"
                                                FontSize="18"
-                                               Margin="80,0,0,0" 
+                                               Margin="90,0,0,0" 
                                    HorizontalAlignment="Left"/>
                         <TextBlock Text="{Binding From}"
                                                FontSize="18"
-                                               Margin="140,0,0,0" 
+                                               Margin="135,0,0,0" 
                                    HorizontalAlignment="Left"/>
                         <TextBlock Text="{Binding To}"
                                                FontSize="18"
@@ -38,7 +38,7 @@
                                    HorizontalAlignment="Left"/>
                         <TextBlock Text="{Binding Location}"
                                                FontSize="18"
-                                               Margin="180,0,0,0" 
+                                               Margin="190,0,0,0" 
                                    HorizontalAlignment="Left"/>
                     </StackPanel>
                 </DataTemplate>
@@ -52,23 +52,32 @@
                           ScrollViewer.VerticalScrollBarVisibility="Visible">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Padding="13">
                         <TextBlock Text="{Binding title}"
                                                FontSize="18"
                                                Margin="80,0,0,0" 
-                                   HorizontalAlignment="Left"/>
+                                   HorizontalAlignment="Left"
+                                   MaxWidth="80"
+                                   TextWrapping="Wrap"
+                                   />
                         <TextBlock Text="{Binding dateFrom}"
                                                FontSize="18"
                                                Margin="100,0,0,0" 
-                                   HorizontalAlignment="Left"/>
+                                   HorizontalAlignment="Left"
+                                   MaxWidth="100"
+                                   TextWrapping="Wrap"/>
                         <TextBlock Text="{Binding dateTo}"
                                                FontSize="18"
                                                Margin="120,0,0,0" 
-                                   HorizontalAlignment="Left"/>
+                                   HorizontalAlignment="Left"
+                                   MaxWidth="100"
+                                   TextWrapping="Wrap"/>
                         <TextBlock Text="{Binding location}"
                                                FontSize="18"
                                                Margin="140,0,0,0" 
-                                   HorizontalAlignment="Left"/>
+                                   HorizontalAlignment="Left"
+                                   MaxWidth="100"
+                                   TextWrapping="Wrap"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

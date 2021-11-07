@@ -31,7 +31,7 @@ namespace wakeupapp.Views
             Calendar.LoadJson();
             DrawerListOptions.ItemsSource = Calendar.items.calendaritems;
             ObservableCollection<TitleBar> tb = new ObservableCollection<TitleBar>();
-            tb.Add(new TitleBar("Title", "From", "To", "Location"));
+            tb.Add(new TitleBar("Title", "Starts", "Ends", "Location"));
             TitleList.ItemsSource = tb;
         }
 
