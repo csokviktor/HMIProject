@@ -24,7 +24,7 @@ namespace wakeupapp
         public static double originLong = 0.0;
         public static string destination = "";
         public static string arriveBy = "";
-        public static string API_KEY = "AIzaSyBDcnY8No0QhhmjlEZg7eToMwmIHVPsrzY";
+        public static string API_KEY = "";
 
         public async static Task<bool> GetDistanceMatrixFromInput()
         {
