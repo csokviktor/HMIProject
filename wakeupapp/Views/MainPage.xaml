@@ -50,6 +50,11 @@
                             <TextBlock Text="Calendar" FontWeight="SemiBold" FontSize="30" Margin="40,20,0,0" />
                         </StackPanel>
                     </ListBoxItem>
+                    <ListBoxItem Name="SettingsListBoxItem" Background="DarkGray">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Settings" FontWeight="SemiBold" FontSize="30" Margin="40,20,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
                 </ListBox>
             </SplitView.Pane>
             <SplitView.Content>

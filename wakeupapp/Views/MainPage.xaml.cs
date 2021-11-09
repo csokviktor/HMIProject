@@ -62,6 +62,22 @@ namespace wakeupapp
                 }
                 frame.Navigate(typeof(CalendarPage), null, new EntranceNavigationTransitionInfo());
             }
+            else if (NewsListBoxItem.IsSelected)
+            {
+                if (MySplitView.IsPaneOpen)
+                {
+                    MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+                }
+                frame.Navigate(typeof(NewsPage), null, new EntranceNavigationTransitionInfo());
+            }
+            else if (SettingsListBoxItem.IsSelected)
+            {
+                if (MySplitView.IsPaneOpen)
+                {
+                    MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+                }
+                frame.Navigate(typeof(SettingsPage), null, new EntranceNavigationTransitionInfo());
+            }
         }
     }
 }
